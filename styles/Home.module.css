@@ -1,0 +1,104 @@
+/* styles/Home.module.css */
+
+.container {
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.main {
+  min-height: 100vh;
+  padding: 4rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #333; /* Set main text color to a dark grey for visibility */
+}
+
+.title {
+  margin: 0;
+  line-height: 1.15;
+  font-size: 4rem;
+  text-align: center;
+  color: #333; /* Ensure title text is also visible */
+}
+
+.description {
+  text-align: center;
+  line-height: 1.5;
+  font-size: 1.5rem;
+  color: #333; /* Ensure description text is visible */
+}
+
+.grid {
+  display: flex;
+  justify-content: center; /* Center grid items horizontally */
+  align-items: center;     /* Center grid items vertically if they wrap */
+  flex-wrap: wrap;
+  max-width: 800px;
+  margin-top: 3rem;
+}
+
+.card {
+  margin: 1rem;
+  flex-basis: 45%; /* Adjust this value as necessary to fit your design */
+  padding: 1.5rem;
+  text-align: center; /* Center text inside the card */
+  color: #333; /* Ensure card text is visible */
+  text-decoration: none;
+  border: 1px solid #eaeaea;
+  border-radius: 10px;
+  transition: color 0.15s ease, border-color 0.15s ease;
+  cursor: pointer;
+  background-color: #fff;
+  
+  display: flex;        /* Use flexbox for layout */
+  flex-direction: column; /* Stack children vertically */
+  justify-content: center; /* Center children vertically */
+  align-items: center;     /* Center children horizontally */
+}
+
+.card:hover,
+.card:focus,
+.card:active {
+  color: #0070f3; /* Hover state color */
+  border-color: #0070f3;
+}
+
+.card h2 {
+  font-size: 1.5rem;
+  color: #333; /* Ensure headings in cards are visible */
+}
+
+.card p {
+  font-size: 1.25rem;
+  line-height: 1.5;
+  color: #333; /* Ensure paragraphs in cards are visible */
+}
+
+.footer {
+  width: 100%;
+  height: 100px;
+  border-top: 1px solid #eaeaea;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #333; /* Set footer text color for better visibility */
+}
+
+.footer p {
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .grid {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .card {
+    flex-basis: 100%; /* Full width on smaller screens */
+  }
+}
