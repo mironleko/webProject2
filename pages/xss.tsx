@@ -2,6 +2,7 @@
 import Head from 'next/head';
 import { useState } from 'react';
 import styles from '../styles/Xss.module.css'; // Make sure to create a corresponding Xss.module.css file
+import DOMPurify from 'dompurify';
 
 const Xss: React.FC = () => {
   const [isXssEnabled, setXssEnabled] = useState<boolean>(false);
@@ -15,7 +16,7 @@ const Xss: React.FC = () => {
   };
 
   const sanitizeInput = (input: string): string => {
-    return input.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    return DOMPurify.sanitize(input);
   };
 
   const simulateXssAttack = () => {
