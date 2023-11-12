@@ -6,11 +6,9 @@ const AdminPage = () => {
   const { data: session, status } = useSession();
   const router = useRouter();
 
-  // Mock data for demonstration purposes
   const mockUserData = [
     { id: 1, name: 'John Doe', email: 'john@example.com' },
     { id: 2, name: 'Jane Smith', email: 'jane@example.com' },
-    // ... more users
   ];
 
   useEffect(() => {

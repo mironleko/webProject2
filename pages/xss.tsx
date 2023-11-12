@@ -39,7 +39,13 @@ const Xss: React.FC = () => {
       }
     } else {
       const sanitizedInput = sanitizeInput(userInput);
-      setXssAttackResult(<div style={{ color: 'black' }}>{sanitizedInput}</div>);
+
+      setXssAttackResult(
+        <div 
+          style={{ color: 'black' }} 
+          dangerouslySetInnerHTML={{ __html: sanitizedInput }} 
+        />
+      );
     }
   };
 

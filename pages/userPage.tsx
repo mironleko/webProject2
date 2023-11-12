@@ -6,12 +6,10 @@ const UserPage = () => {
   const { data: session, status } = useSession();
   const router = useRouter();
 
-  // Mock data for demonstration purposes
   const tasks = [
     { id: 1, title: 'Complete project report', status: 'In Progress' },
     { id: 2, title: 'Update website', status: 'Completed' },
     { id: 3, title: 'Call with the marketing team', status: 'Scheduled' },
-    // ... more tasks
   ];
 
   if (status === "loading") {

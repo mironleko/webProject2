@@ -10,12 +10,11 @@ const BrokenAccessControl = () => {
   const router = useRouter();
 
   useEffect(() => {
-    // Redirect to a different page based on the user's role after session is updated
     if (status === 'authenticated') {
       if (session.user.role === 'admin') {
         router.push('/adminPage');
       } else {
-        router.push('/userPage'); // Redirect to user page or dashboard as needed
+        router.push('/userPage');
       }
     }
   }, [session, status, router]);
@@ -29,7 +28,6 @@ const BrokenAccessControl = () => {
       password,
     });
 
-    // The signIn function will update the session, and the useEffect will handle the redirect
     if (result?.error) {
       alert('Login failed. Please check your credentials and try again.');
     }
@@ -42,7 +40,6 @@ const BrokenAccessControl = () => {
     localStorage.setItem('isAttackEnabled', String(isEnabled));
   };
 
-  // Early return if already authenticated
   if (status === 'authenticated') {
     return null;
   }

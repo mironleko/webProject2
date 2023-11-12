@@ -1,4 +1,3 @@
-// pages/index.tsx
 import Head from 'next/head';
 import Link from 'next/link';
 import styles from '../styles/Home.module.css';
@@ -19,7 +18,6 @@ const Home: React.FC = () => {
         </p>
 
         <div className={styles.grid}>
-          {/* Link to the XSS simulation page */}
           <Link href="/xss">
             <div className={styles.card}>
               <h2>Cross-Site Scripting (XSS) &rarr;</h2>
@@ -27,8 +25,6 @@ const Home: React.FC = () => {
             </div>
           </Link>
           
-          {/* Placeholder for other vulnerability links */}
-          {/* Example: Broken Access Control */}
           <Link href="/broken-access-control">
             <div className={styles.card}>
               <h2>Broken Access Control &rarr;</h2>
@@ -36,7 +32,6 @@ const Home: React.FC = () => {
             </div>
           </Link>
           
-          {/* Add more cards for other vulnerabilities here */}
         </div>
       </main>
 
