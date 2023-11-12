@@ -9,7 +9,10 @@ const Xss: React.FC = () => {
   const [userInput, setUserInput] = useState<string>('');
   const [xssAttackResult, setXssAttackResult] = useState<JSX.Element | null>(null);
 
-  const toggleXss = () => setXssEnabled(!isXssEnabled);
+  const toggleXss = () => {
+    setXssAttackResult(null);
+    setXssEnabled(!isXssEnabled)
+  };
 
   const handleUserInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setUserInput(e.target.value);
@@ -20,10 +23,11 @@ const Xss: React.FC = () => {
   };
 
   const simulateXssAttack = () => {
+    const outputDiv = document.getElementById('xssOutput');
+
     if (isXssEnabled) {
-      const outputDiv = document.getElementById('xssOutput');
+
       if (outputDiv) {
-        outputDiv.innerHTML = userInput;
         const scripts = Array.from(outputDiv.querySelectorAll('script'));
         for (const oldScript of scripts) {
           const newScript = document.createElement('script');
@@ -37,9 +41,9 @@ const Xss: React.FC = () => {
           }
         }
       }
+
     } else {
       const sanitizedInput = sanitizeInput(userInput);
-
       setXssAttackResult(
         <div 
           style={{ color: 'black' }} 
