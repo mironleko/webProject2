@@ -28,6 +28,7 @@ const Xss: React.FC = () => {
     if (isXssEnabled) {
 
       if (outputDiv) {
+        outputDiv.innerHTML = userInput;
         const scripts = Array.from(outputDiv.querySelectorAll('script'));
         for (const oldScript of scripts) {
           const newScript = document.createElement('script');
@@ -40,6 +41,7 @@ const Xss: React.FC = () => {
             console.error('No parent node found for script', oldScript);
           }
         }
+        outputDiv.innerHTML = '';
       }
 
     } else {
